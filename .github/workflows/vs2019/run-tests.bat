@@ -9,4 +9,4 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliar
 
 @echo Run tests with ctest
 cd build
-ctest -j2 -V -L CORE -C DEBUG .
+ctest -j2 --debug -VV -L CORE -C Release .
