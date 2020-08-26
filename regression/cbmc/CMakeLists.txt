@@ -1,5 +1,5 @@
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
-  set(gcc_only "-X gcc-only")
+  set(gcc_only -X gcc-only)
 else()
   set(gcc_only "")
 endif()
