@@ -10,14 +10,16 @@ add_test_pl_tests(
 
 add_test_pl_profile(
     "cbmc-paths-lifo"
-    "$<TARGET_FILE:cbmc> --paths lifo ${gcc_only}"
+    "$<TARGET_FILE:cbmc> --paths lifo"
+    ${gcc_only}
     "-C;-X;thorough-paths;-X;smt-backend;-X;paths-lifo-expected-failure;-s;paths-lifo"
     "CORE"
 )
 
 add_test_pl_profile(
     "cbmc-cprover-smt2"
-    "$<TARGET_FILE:cbmc> --cprover-smt2 ${gcc_only}"
+    "$<TARGET_FILE:cbmc> --cprover-smt2"
+    ${gcc_only}
     "-C;-X;broken-smt-backend;-s;cprover-smt2"
     "CORE"
 )
