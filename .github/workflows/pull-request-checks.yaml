@@ -117,9 +117,6 @@ jobs:
     runs-on: windows-2019
     env:
       SCRIPT_DIR: .github/workflows/vs2019
-    defaults:
-      run:
-        shell: cmd
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
