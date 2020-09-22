@@ -4,7 +4,7 @@ else()
   set(gcc_only "")
 endif()
 
-if("{CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   set(exclude_win_broken_tests -X winbug)
 else()
   set(exclude_win_broken_tests "")
