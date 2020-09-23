@@ -22,13 +22,17 @@ add_test_pl_profile(
     ${gcc_only}
 )
 
-add_test_pl_profile(
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  message(WARNING "skipping broken cprover-smt2 tests on Windows")
+else()
+  add_test_pl_profile(
     "cbmc-cprover-smt2"
     "$<TARGET_FILE:cbmc> --cprover-smt2"
     "-C;-X;broken-smt-backend;-s;cprover-smt2"
     "CORE"
     ${gcc_only}
-)
+    )
+endif()
 
 set_property(
   TEST "cbmc-cprover-smt2-CORE"
