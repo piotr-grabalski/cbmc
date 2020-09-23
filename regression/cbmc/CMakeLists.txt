@@ -32,10 +32,10 @@ else()
     "CORE"
     ${gcc_only}
     )
-endif()
 
-set_property(
-  TEST "cbmc-cprover-smt2-CORE"
-  PROPERTY ENVIRONMENT
-    "PATH=$ENV{PATH}:${CMAKE_BINARY_DIR}/bin"
-)
+  set_property(
+    TEST "cbmc-cprover-smt2-CORE"
+    PROPERTY ENVIRONMENT
+      "PATH=$ENV{PATH}:${CMAKE_BINARY_DIR}/bin"
+  )
+endif()
