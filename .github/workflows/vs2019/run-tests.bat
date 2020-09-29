@@ -8,7 +8,7 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliar
 @echo %PATH%
 
 @echo Dependents of jbmc build
-dumpbin /dependents build\bin\Release\jbmc.exe
+dumpbin /dependents build\bin\jbmc.exe
 
 @echo Run tests with ctest
 cd build
