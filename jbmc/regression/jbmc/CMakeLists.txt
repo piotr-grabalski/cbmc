@@ -1,5 +1,11 @@
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  set(exclude_win_broken_tests -X winbug)
+else()
+  set(exclude_win_broken_tests "")
+endif()
+
 add_test_pl_tests(
-    "$<TARGET_FILE:jbmc> --validate-goto-model --validate-ssa-equation --validate-trace"
+    "$<TARGET_FILE:jbmc> --validate-goto-model --validate-ssa-equation --validate-trace" ${exclude_win_broken_tests}
 )
 
 if(DEFINED BDD_GUARDS)
