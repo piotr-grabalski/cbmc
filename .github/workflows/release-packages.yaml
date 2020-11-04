@@ -130,6 +130,15 @@ jobs:
           $msi_name = Get-ChildItem -Filter *.msi -Name
           Write-Output "::set-output name=msi_installer::build/$msi_name"
           Write-Output "::set-output name=msi_name::$msi_name"
+      - name: Sign the installer
+        id: sign_the_installer
+        uses: DanaBear/code-sign-action@v4
+        with:
+          certificate: '${{ secrets.CodeSignCertWin }}'
+          password: '${{ secrets.CodeSignCertPassword }}'
+          certificatename: '${{ secrets.CodeSignCertName }}'
+          folder: '${{ steps.create_packages.outputs.msi_installer }}'
+          recursive: false
       - name: Get release info
         id: get_release_info
         uses: bruceadams/get-release@v1.2.0
