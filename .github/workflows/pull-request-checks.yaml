@@ -186,7 +186,7 @@ jobs:
   windows-msi-package:
     runs-on: windows-2019
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -219,7 +219,7 @@ jobs:
   ubuntu-18_04-package:
     runs-on: ubuntu-18.04
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:

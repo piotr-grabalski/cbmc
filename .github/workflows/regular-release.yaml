@@ -27,7 +27,7 @@ jobs:
       - name: Create release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.DB_CI_CPROVER_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
           CBMC_TAG: ${{ needs.get-version-information.outputs.version }}
         with:
           tag_name: ${{ env.CBMC_TAG }}
